@@ -1,5 +1,5 @@
 import React from "react";
-import { Laptop, Cpu, PhoneCall, ShieldAlert, Layers } from "lucide-react";
+import { Laptop, Cpu, PhoneCall, ShieldAlert, Layers, Building2 } from "lucide-react";
 
 interface HeaderProps {
   activeTab: string;
@@ -14,6 +14,7 @@ export default function Header({ activeTab, setActiveTab, cartCount }: HeaderPro
     { id: "consultant", label: "AI Hardware Consultant", icon: ShieldAlert },
     { id: "repair", label: "Repair Service Desk", icon: PhoneCall },
     { id: "sla", label: "Enterprise SLA Portal", icon: Layers },
+    { id: "erp", label: "ERP Suite & Ledger", icon: Building2 },
     { id: "dashboard", label: "Control Center", icon: Cpu }
   ];
 

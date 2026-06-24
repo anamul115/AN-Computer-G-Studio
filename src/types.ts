@@ -14,6 +14,9 @@ export interface Product {
   image: string;
   featured?: boolean;
   stock: number;
+  isPreOwned?: boolean;
+  brand?: string;
+  buyingPrice?: number;
 }
 
 export interface PCComponent {

@@ -19,9 +19,12 @@ const products = [
     category: "workstation",
     description: "Enterprise-grade 64-core engineering computer. Optimized for scientific computing, AI training, and thermal durability in high ambient temperatures like Dhaka.",
     price: 580000,
+    buyingPrice: 490000,
     image: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&q=80&w=600",
     stock: 5,
     featured: true,
+    isPreOwned: false,
+    brand: "AN Labs",
     specs: {
       "Processor": "AMD Ryzen Threadripper PRO 7975WX (32 Cores, 64 Threads)",
       "Graphics": "Dual NVIDIA RTX 6000 Ada Generation 48GB",
@@ -36,9 +39,12 @@ const products = [
     category: "workstation",
     description: "High-performance workstation customized for freelance developers and content creators in Bangladesh. Perfect for Premiere Pro, 3D modeling, and compiler tasks.",
     price: 295000,
+    buyingPrice: 240000,
     image: "https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&q=80&w=600",
     stock: 12,
     featured: true,
+    isPreOwned: false,
+    brand: "AN Labs",
     specs: {
       "Processor": "Intel Core i9-14900K (24 Cores, 5.8 GHz)",
       "Graphics": "NVIDIA GeForce RTX 4080 Super 16GB",
@@ -53,9 +59,12 @@ const products = [
     category: "gaming",
     description: "The ultimate AAA gaming rig custom built in Bangladesh, featuring customized dust filters, professional cable management, and high-quality liquid cooling.",
     price: 375000,
+    buyingPrice: 310000,
     image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&q=80&w=600",
     stock: 8,
     featured: true,
+    isPreOwned: false,
+    brand: "AN Labs",
     specs: {
       "Processor": "AMD Ryzen 7 7800X3D (V-Cache Gaming Champ)",
       "Graphics": "NVIDIA GeForce RTX 4090 24GB",
@@ -70,9 +79,12 @@ const products = [
     category: "laptop",
     description: "Sleek aluminum chassis laptop. Certified local warranty support in Dhaka & Chittagong. Liquid Retina display optimized for color-accurate designing.",
     price: 225000,
+    buyingPrice: 185000,
     image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=600",
     stock: 15,
     featured: true,
+    isPreOwned: false,
+    brand: "AN Labs",
     specs: {
       "Processor": "Intel Core Ultra 7 155H (16 Cores, Built-in NPU)",
       "Graphics": "NVIDIA GeForce RTX 4060 Mobile 8GB",
@@ -87,15 +99,98 @@ const products = [
     category: "server",
     description: "Enterprise rackmount machine designed for local Bangladeshi ISP nodes, financial hypervisors, and corporate intranets in Motijheel or Gulshan.",
     price: 765000,
+    buyingPrice: 650000,
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600",
     stock: 3,
     featured: false,
+    isPreOwned: false,
+    brand: "AN Labs",
     specs: {
       "Processor": "Dual AMD EPYC 9354 (64 Cores total)",
       "Memory": "512GB Registered ECC DDR5",
       "Network": "Quad 10G SFP+ Enterprise NIC ports",
       "Storage": "8x 2.4TB Enterprise SAS SSD Hot-Swap Bays",
       "Redundant PSU": "Dual 1600W Hot-Swap Titanium Units"
+    }
+  },
+  {
+    id: "preowned-game-1",
+    name: "Pre-Owned Custom Core i7 Gaming PC",
+    category: "gaming",
+    description: "Budget powerhouse, thoroughly dust-cleaned and stress-tested for thermal performance in high ambient room temperatures. Pristine custom chassis.",
+    price: 65000,
+    buyingPrice: 45000,
+    image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&q=80&w=600",
+    stock: 2,
+    featured: false,
+    isPreOwned: true,
+    brand: "Custom",
+    specs: {
+      "Processor": "Intel Core i7-11700K (8 Cores, 5.0 GHz)",
+      "Graphics": "NVIDIA GeForce RTX 3070 8GB",
+      "Memory": "16GB G.Skill Ripjaws 3200MHz DDR4",
+      "Storage": "1TB NVMe PCIe Gen4 SSD",
+      "Condition": "Certified Grade-A (9.5/10), 6 Months Labs Warranty"
+    }
+  },
+  {
+    id: "preowned-lenovo-1",
+    name: "Pre-Owned Lenovo ThinkPad X1 Carbon Gen 8",
+    category: "laptop",
+    description: "Ultra-premium business laptop imported from corporate stocks. Renowned keyboard, legendary durability, and lightweight premium carbon fiber lid.",
+    price: 55000,
+    buyingPrice: 35000,
+    image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=600",
+    stock: 4,
+    featured: false,
+    isPreOwned: true,
+    brand: "Lenovo",
+    specs: {
+      "Processor": "Intel Core i7-10610U vPro Processor",
+      "Memory": "16GB LPDDR3 2133MHz",
+      "Storage": "512GB PCIe NVMe SSD",
+      "Display": "14-inch Full HD IPS Anti-glare",
+      "Condition": "Grade-A Executive Used, 1 Year Service Warranty"
+    }
+  },
+  {
+    id: "preowned-asus-1",
+    name: "Pre-Owned ASUS ROG Strix G15 Gaming Laptop",
+    category: "gaming",
+    description: "Slightly used high-performance gaming laptop with pristine thermal paste, RGB lighting accents, and robust construction. Certified by AN Labs Dhaka.",
+    price: 85000,
+    buyingPrice: 60000,
+    image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&q=80&w=600",
+    stock: 1,
+    featured: false,
+    isPreOwned: true,
+    brand: "ASUS",
+    specs: {
+      "Processor": "AMD Ryzen 7 5800H (8 Cores)",
+      "Graphics": "NVIDIA GeForce RTX 3060 6GB",
+      "Display": "15.6-inch Full HD 144Hz IPS Panel",
+      "Memory": "16GB DDR4 Dual-Channel",
+      "Condition": "Grade-B+ (Minor bezel scuffs), 6 Months Labs Warranty"
+    }
+  },
+  {
+    id: "preowned-hp-1",
+    name: "Pre-Owned HP Z4 G4 Server Workstation",
+    category: "workstation",
+    description: "Heavy-duty workspace engine. Perfect for computational simulations, hosting local databases, 3D architecture design, or virtualization.",
+    price: 110000,
+    buyingPrice: 80000,
+    image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=600",
+    stock: 1,
+    featured: false,
+    isPreOwned: true,
+    brand: "HP",
+    specs: {
+      "Processor": "Intel Xeon W-2135 (6 Cores, 12 Threads, ECC Support)",
+      "Graphics": "NVIDIA Quadro RTX 4000 8GB GDDR6",
+      "Memory": "64GB DDR4 ECC Registered RAM",
+      "Storage": "1TB NVMe PCIe M.2 SSD + 2TB Enterprise Enterprise HDD",
+      "Condition": "Grade-A Refurbished, 1 Year Motherboard Warranty"
     }
   }
 ];

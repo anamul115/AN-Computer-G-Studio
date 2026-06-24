@@ -7,11 +7,13 @@ import AIConsultant from "./components/AIConsultant";
 import RepairScheduler from "./components/RepairScheduler";
 import SLAQuote from "./components/SLAQuote";
 import Dashboard from "./components/Dashboard";
+import ERPManagement from "./components/ERPManagement";
 import { Product, PCComponent, CustomPCBuild, RepairBooking, SLAAgreement, ChatMessage } from "./types";
-import { Cpu } from "lucide-react";
+import { Cpu, MessageCircle, X } from "lucide-react";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>("catalog");
+  const [showWhatsAppTooltip, setShowWhatsAppTooltip] = useState(true);
   const [products, setProducts] = useState<Product[]>([]);
   const [components, setComponents] = useState<PCComponent[]>([]);
   const [orders, setOrders] = useState<RepairBooking[]>([]);
@@ -220,6 +222,8 @@ export default function App() {
         return <RepairScheduler onBookRepair={handleBookRepair} />;
       case "sla":
         return <SLAQuote onRegisterSLA={handleRegisterSLA} />;
+      case "erp":
+        return <ERPManagement products={products} />;
       case "dashboard":
         return <Dashboard orders={orders} slas={slas} />;
       default:
@@ -285,6 +289,50 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Persistent WhatsApp Support Widget */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+        {showWhatsAppTooltip && (
+          <div className="bg-white rounded-xl shadow-lg border border-zinc-200 p-3.5 max-w-xs animate-in fade-in slide-in-from-bottom-2 duration-300 relative">
+            <button 
+              onClick={() => setShowWhatsAppTooltip(false)}
+              className="absolute top-2 right-2 text-zinc-400 hover:text-zinc-600 transition-colors"
+            >
+              <X className="h-3 w-3" />
+            </button>
+            <div className="flex items-start gap-2.5 pr-4">
+              <span className="flex h-2.5 w-2.5 translate-y-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+              <div>
+                <h4 className="text-xs font-bold text-zinc-900">AN Labs Dhaka Support</h4>
+                <p className="text-[10px] text-zinc-500 mt-0.5 leading-relaxed">
+                  Discuss specs, request repairs, or verify stock live on WhatsApp.
+                </p>
+                <a
+                  href="https://wa.me/8801700000000?text=Hello%20AN%20Computers!%20I'm%20interested%20in%20custom%20PC%20building%20/%20hardware%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 hover:text-emerald-700 mt-2 transition-colors"
+                >
+                  Start WhatsApp Chat →
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+        
+        <a
+          href="https://wa.me/8801700000000?text=Hello%20AN%20Computers!%20I'm%20interested%20in%20custom%20PC%20building%20/%20hardware%20services."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500 text-white shadow-xl hover:bg-emerald-600 transition-all hover:scale-110 active:scale-95 group relative"
+          aria-label="Chat on WhatsApp"
+        >
+          <MessageCircle className="h-6 w-6" />
+          <span className="absolute right-14 bg-zinc-950 text-white text-[10px] font-bold px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">
+            WhatsApp Support (+880 1700-000000)
+          </span>
+        </a>
+      </div>
     </div>
   );
 }
