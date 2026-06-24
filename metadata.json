@@ -1,0 +1,6 @@
+{
+  "name": "AN Computers Limited",
+  "description": "Enterprise-grade computer sales, custom PC builder, repair booking, and AI hardware consultant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
